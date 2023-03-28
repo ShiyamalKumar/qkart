@@ -175,8 +175,8 @@ const Register = () => {
 
           <p className="secondary-action">
             Already have an account?{" "}
-            {/* <Link className="link" to="/">Login here</Link> */}
-            <a href="/">Login Here</a>
+            <Link className="link" to="/login">Login here</Link>
+            
           </p>
         </Stack>
       </Box>
