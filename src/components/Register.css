@@ -5,9 +5,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70vh;
+  justify-content:right;
+  align-items:center;
+  height: 80vh;
 }
 
 .form {
