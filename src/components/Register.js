@@ -46,7 +46,6 @@ const Register = () => {
     let name = e.target.name; 
     let value = e.target.value; 
     setFormData({...formData, [name]:value}); 
-    console.log(formData) 
   } 
   
   const register = async (formData) => { 

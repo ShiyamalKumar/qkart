@@ -1,0 +1,33 @@
+  const debounceSearch = (event, debounceTimeout) => {
+
+    clearTimeout(debounceTimeout); 
+    const value = event.target.value; setSearchText(value); 
+    const newDebounceTimeout = setTimeout(() => { performSearch(value); }, 500); 
+    return newDebounceTimeout; }; 
+    // Handle search bar input 
+    const handleSearch = (event) => { 
+      const newDebounceTimeout = debounceSearch(event, debounceTimeout); 
+      setDebounceTimeout(newDebounceTimeout); };
+
+      const [debounceTimeout, setDebounceTimeout] = useState(null); 
+    };
+
+      const performSearch = async (text) => {
+          try { const response = await axios.get( `${config.endpoint}/products/search?value=${text}` ); 
+          setFilteredProducts(response.data); } 
+          catch (error) { console.error(error); 
+            setFilteredProducts(null); 
+            enqueueSnackbar(error.message, { variant: "error", }); } };
+
+
+              const performAPICall = async () => {
+    setLoading(true); 
+    try{ await axios.get(`${config.endpoint}/products`).then((response)=>{ 
+      setProducts(response.data); 
+      console.log(products) })
+      .catch((error)=>{ 
+        enqueueSnackbar(error.message, { variant: "error" }); }) } 
+        catch (error) { 
+          enqueueSnackbar("Something went wrong. Check that the backend is running, reachable and returns valid JSON.", { variant: "error" }); } 
+          setLoading(false); }; 
+          useEffect(() => { performAPICall(); }, []);
