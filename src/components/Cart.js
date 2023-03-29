@@ -81,6 +81,17 @@ export const getTotalCartValue = (items = []) => {
   }, 0);
 };
 
+// TODO: CRIO_TASK_MODULE_CHECKOUT - Implement function to return total cart quantity
+/**
+ * Return the sum of quantities of all products added to the cart
+ *
+ * @param { Array.<CartItem> } items
+ *    Array of objects with complete data on products in cart
+ *
+ * @returns { Number }
+ *    Total quantity of products added to the cart
+ *
+ */
 export const getTotalItems = (items = []) => {
   let itemsCount = items.map((item) => {
     let count = 0;
@@ -92,7 +103,7 @@ export const getTotalItems = (items = []) => {
   }, 0);
 };
 
-
+// TODO: CRIO_TASK_MODULE_CHECKOUT - Add static quantity view for Checkout page cart
 /**
  * Component to display the current quantity for a product and + and - buttons to update product quantity on cart
  * 
